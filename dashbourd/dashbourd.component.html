@@ -1,0 +1,132 @@
+<app-menu></app-menu>
+
+<div >
+    <div class="card ">
+        <div class="card-body"   >
+            <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>shop Name</th>
+                    <th>Shop Phone</th>
+                    <th>Address</th>
+                    <th>Created Date</th>
+                    <th>Shop Type</th>
+                    <th>Operations</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <!-- *ngFor="let shop of allShopDetails" -->
+                    <tr  *ngFor="let shop of allShopDetails">
+                    <td>{{shop.shopId}}</td>
+                    <td>{{shop.shopName}}</td>
+                    <td>{{shop.shopPhone}}</td>
+                    <td>{{shop.shopAddress}}</td>
+                    <td>{{shop.shopCreatedDate}}</td>
+                    <td>{{shop.shopType}}</td>
+                    <td>
+                        <i class="fa fa-trash" (click)="openPopupForDelete()"  style="font-size:24px ; margin-left: 20px;;" ></i>
+                    
+                    <i class="fa fa-edit" (click)="openPopup(shop.shopId, shop.shopName ,shop.shopPhone,shop.shopAddress, shop.shopCreatedDate,shop.shopType)"  style="font-size:24px; margin-left: 20px;"></i>
+                       
+                       
+                    </td>
+                </tr>
+                
+                
+                
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Modad div for create shop Starts -->
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Update Recodes</h4>
+        </div>
+        <div class="modal-body">
+
+            <!-- <p>One Stop Solution for all CS problems</p> -->
+            <div class="container" >
+                <div class="row">
+                <div class=" mx-auto">
+                    <div class="card card-signin my-5">
+                    <div class="card-body">
+                        
+                        <form class="form-signin" [formGroup]="dashform">
+            
+                        <div class="form-group">
+                            <label for="inputEmail" >shop name</label>
+                            <input type="text" formControlName="shopname" class="form-control rounded" aria-describedby="emailHelp"  name = "firstName" >
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" >shop phone</label>
+                            <input type="text" formControlName="shopPhone" class="form-control rounded" aria-describedby="emailHelp"  name="lastName">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="inputPassword" >Address :</label>
+                            <input type="email" formControlName="shopAddress" class="form-control rounded"    name="email">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="inputPassword" >Shop Type :</label>
+                            <input type="text"  formControlName="shoptype" class="form-control rounded"     name="userName"  >
+                        </div>
+            
+                        <!-- <div class="form-group">
+                            <label for="inputPassword" >Password :</label>
+                            <input type="password" class="form-control rounded"  name = "password" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="inputPassword" >phone :</label>
+                            <input type="text" class="form-control rounded"     name="phone" >
+                        </div> -->
+            
+                        <br>
+                        <div class="modal-footer">
+                            <button  class="btn btn-lg btn-primary btn-block text-uppercase" type="button"  (ngsubmit)="updateShop()">Update</button>
+                            <button type="button" class="btn btn-danger" (click)="closePopup()"> Close </button>
+                        </div>
+                        </form>
+                    </div>
+                    </div>
+                </div> z 
+                </div>
+            </div>
+        </div> 
+        
+        </div>
+    </div>
+</div>
+<!-- Modad div for create shop END -->
+
+<!-- Modad div for Delete shop Starts -->
+
+
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyleDelete}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Update Recodes</h4>
+        </div>
+        <div class="modal-body">
+        asdas
+        </div>
+        <div class="modal-footer">
+            <button  class="btn   btn-danger  text-uppercase" type="button"  >Delete</button>
+            <button type="button" class="btn btn-primary" (click)="closePopupDelete()"> Close </button>
+        </div>
+    </div>
+</div>
+        
+<!-- Modad div for Delete shop END -->

@@ -1,0 +1,28 @@
+<div class="container" >
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin" [formGroup]="loginForm">
+  
+              <div class="form-group"  >
+                
+                <label for="inputEmail" >email *</label>
+
+                <input type="email"  form-control-name="email"  class="form-control rounded" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" formControlName="phone">
+                
+              <div class="form-group">
+                  <label for="inputPassword" >Password *</label>
+                  <input type="password" formControlName="password" class="form-control rounded"  id="inputPassword" aria-describedby="passwordHelp" placeholder="Enter password" formControlName="password">
+              </div>
+              <br>
+              <button id="submitButton" class="btn btn-lg btn-primary btn-block text-uppercase" type="button"  (click)="onSubmitButtonClicked()">Sign In </button> 
+              <button id="submitButton" class="btn btn-lg btn-primary btn-block text-uppercase" type="button"  routerLink="/register" > create New Account</button>
+  
+          
+          </div>
+      
+      
+    
+  

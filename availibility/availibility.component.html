@@ -1,0 +1,35 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Shop Availibility</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" (ngSubmit)="onSubmitButton()">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput type="text" placeholder="Shop details" [(ngModel)]="availibilitymodel.ShopDetails">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="date" placeholder="Date from Date"  [(ngModel)]="availibilitymodel.datefromdate">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="date" placeholder="Date TO Date"  [(ngModel)]="availibilitymodel.datetodate" >
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="time" placeholder="Time from Time"  [(ngModel)]="availibilitymodel.timefromtime">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput type="time" placeholder="Time  TO Time"  [(ngModel)]="availibilitymodel.timetotime">
+          </mat-form-field>  
+          <mat-form-field class="example-full-width" hidden >
+            <input matInput type="text"  hidden placeholder="LongId"  [(ngModel)]="availibilitymodel.LongId">
+          </mat-form-field> 
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button"  type="submit" >Shop Availibility</button>
+        </mat-card-content>
+    </form>
+    </mat-card>
+    </div>

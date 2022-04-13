@@ -1,0 +1,45 @@
+
+<mat-card >
+  <mat-card-content>
+          <form class="formGroup" (ngSubmit)="onSubmitButtonClicked()">
+          
+
+  <mat-form-field class="full-width-input">
+  <input matInput type="text" placeholder="ShopName" required  [(ngModel)]="shopmodel.ShopName" name = "firstName">
+  </mat-form-field>
+
+  
+        <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Shop Phone Number"  required [(ngModel)]="shopmodel.ShopphoneNumber" name="lastName">
+        </mat-form-field>
+    
+        <mat-form-field class="full-width-input">
+          <input matInput type="email" placeholder="Shop Email "  required [(ngModel)]="shopmodel.Shopemail" name="email">
+          </mat-form-field>
+          
+          <mat-form-field class="full-width-input">
+            <input matInput type="text" placeholder="Shop Adress"  required  name="userName" [(ngModel)]="shopmodel.ShopAdress">
+            </mat-form-field>
+
+            <mat-form-field class="full-width-input" hidden >
+              <input matInput type="text" hidden  placeholder="Shop Adress"  required  name="userName" [(ngModel)]="shopmodel.UserId" value="3">
+              </mat-form-field> 
+
+              <mat-form-field class="example-full-width" hidden >
+                <input matInput type="text"  hidden placeholder="LongId"  [(ngModel)]="shopmodel.LongId">
+              </mat-form-field>
+
+            <mat-form-field class="full-width-input">
+              <input matInput type="text" placeholder="Pincode "  required  name = "password" [(ngModel)]="shopmodel.Pincode">
+              </mat-form-field>
+  <mat-form-field class="example-full-width" hidden >
+            <input matInput type="text"  hidden placeholder="LongId"  [(ngModel)]="shopmodel.Date">
+          </mat-form-field>
+              <br>
+              
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button"  type="submit" >create Shop</button>
+  
+
+</form>
+</mat-card-content>
+</mat-card>
